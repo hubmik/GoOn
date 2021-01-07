@@ -1,0 +1,30 @@
+.nav{
+  width: 25%;
+  max-width: 190px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.nav ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav li{
+  width: 100%;
+  background-color: whitesmoke;
+  margin-bottom: 8px;
+}
+
+.nav li a{
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  display: block;
+}
+
+.nav li :hover{
+  background-color: gray;
+  color: white;
+}
