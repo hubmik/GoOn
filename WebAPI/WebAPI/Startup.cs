@@ -39,7 +39,7 @@ namespace WebAPI
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
             });
         }
 
