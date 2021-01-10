@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExploitationComponent } from './components/exploitation/exploitation.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/user/registration', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'user', component: UserComponent,
+    children:[
+      {path: 'registration', component: RegistrationComponent}
+    ] },
   { path: 'exploitation', component: ExploitationComponent }
 ];
 
