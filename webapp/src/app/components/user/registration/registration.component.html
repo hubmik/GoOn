@@ -1,1 +1,25 @@
-<p>registration works!</p>
+<form [formGroup]="service.userModel" autocomplete="off">
+  <div required>
+    <label>Username</label>
+    <input formControlName="UserName">
+  </div>
+  <div required>
+    <label>Email</label>
+    <input formControlName="Email">
+  </div>
+  <div required>
+    <label>Full Name</label>
+    <input formControlName="FullName">
+  </div>
+  <div formGroupName="passwords">
+    <div required>
+      <label>Password</label>
+      <input formControlName="Password">
+    </div>
+    <div required>
+      <label>Confirm Password</label>
+      <input formControlName="ConfirmPassword">
+    </div>
+  </div>
+  <button type="submit">Sign Up</button>
+</form>
