@@ -1,24 +1,30 @@
 <form [formGroup]="service.userModel" autocomplete="off">
-  <div required>
+  <div class="form-group required">
     <label>Username</label>
     <input formControlName="UserName">
+    <label class="text-danger" *ngIf="service.userModel.get('UserName').touched && service.userModel.get('UserName').errors?.required">Pole jest wymagane!</label>
   </div>
-  <div required>
+  <div class="form-group required">
     <label>Email</label>
     <input formControlName="Email">
+    <label class="text-danger" *ngIf="service.userModel.get('Email').touched && service.userModel.get('Email').errors?.required">Pole jest wymagane!</label>
   </div>
-  <div required>
+  <div class="form-group">
     <label>Full Name</label>
     <input formControlName="FullName">
   </div>
-  <div formGroupName="passwords">
-    <div required>
+  <div formGroupName="Passwords">
+    <div class="form-group required">
       <label>Password</label>
       <input formControlName="Password">
+      <label class="text-danger" *ngIf="service.userModel.get('Passwords.Password').touched && service.userModel.get('Passwords.Password').errors?.required">Pole jest wymagane!</label>
+      <label class="text-danger" *ngIf="service.userModel.get('Passwords.Password').touched && service.userModel.get('Passwords.Password').errors?.minlength">Wymagane minimum 6 znaków!</label>
     </div>
-    <div required>
+    <div class="form-group required">
       <label>Confirm Password</label>
       <input formControlName="ConfirmPassword">
+      <label class="text-danger" *ngIf="service.userModel.get('Passwords.ConfirmPassword').touched && service.userModel.get('Passwords.ConfirmPassword').errors?.required">Pole jest wymagane!</label>
+      <label class="text-danger" *ngIf="service.userModel.get('Passwords.ConfirmPassword').touched && service.userModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Hasła nie są takie same!</label>
     </div>
   </div>
   <button type="submit">Sign Up</button>
