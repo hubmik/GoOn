@@ -1,13 +1,13 @@
-<form [formGroup]="service.userModel" autocomplete="off">
+<form [formGroup]="service.formModel" (ngSubmit)="onSubmitForm()" autocomplete="off">
   <div class="form-group required">
     <label>Username</label>
     <input formControlName="UserName">
-    <label class="text-danger" *ngIf="service.userModel.get('UserName').touched && service.userModel.get('UserName').errors?.required">Pole jest wymagane!</label>
+    <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Pole jest wymagane!</label>
   </div>
   <div class="form-group required">
     <label>Email</label>
     <input formControlName="Email">
-    <label class="text-danger" *ngIf="service.userModel.get('Email').touched && service.userModel.get('Email').errors?.required">Pole jest wymagane!</label>
+    <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.required">Pole jest wymagane!</label>
   </div>
   <div class="form-group">
     <label>Full Name</label>
@@ -16,16 +16,16 @@
   <div formGroupName="Passwords">
     <div class="form-group required">
       <label>Password</label>
-      <input formControlName="Password">
-      <label class="text-danger" *ngIf="service.userModel.get('Passwords.Password').touched && service.userModel.get('Passwords.Password').errors?.required">Pole jest wymagane!</label>
-      <label class="text-danger" *ngIf="service.userModel.get('Passwords.Password').touched && service.userModel.get('Passwords.Password').errors?.minlength">Wymagane minimum 6 znaków!</label>
+      <input type="password" formControlName="Password">
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Pole jest wymagane!</label>
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Wymagane minimum 6 znaków!</label>
     </div>
     <div class="form-group required">
       <label>Confirm Password</label>
-      <input formControlName="ConfirmPassword">
-      <label class="text-danger" *ngIf="service.userModel.get('Passwords.ConfirmPassword').touched && service.userModel.get('Passwords.ConfirmPassword').errors?.required">Pole jest wymagane!</label>
-      <label class="text-danger" *ngIf="service.userModel.get('Passwords.ConfirmPassword').touched && service.userModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Hasła nie są takie same!</label>
+      <input type="password" formControlName="ConfirmPassword">
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Pole jest wymagane!</label>
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Hasła nie są takie same!</label>
     </div>
   </div>
-  <button type="submit">Sign Up</button>
+  <button type="submit" [disabled]="!service.formModel.valid">Sign Up</button>
 </form>
