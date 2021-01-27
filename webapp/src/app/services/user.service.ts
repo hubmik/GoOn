@@ -39,7 +39,7 @@ export class UserService {
     userModel.Username = this.formModel.value.UserName;
     userModel.Email = this.formModel.value.Email;
     userModel.FullName = this.formModel.value.FullName;
-    userModel.Password = this.formModel.value.Password;
+    userModel.Password = this.formModel.value.Passwords.Password;
 
     var httpBody = {
       UserName: userModel.Username,

@@ -18,13 +18,14 @@ export class RegistrationComponent implements OnInit {
   onSubmitForm(){
     this.service.register().subscribe(
       (res: any) => {
-        if(res.succeded){
+        if(res.succeeded){
           this.service.formModel.reset();
         }else{
           res.errors.array.forEach(element => {
             switch(element.code){
               case 'DuplicateUserName':
                 break;
+
               default:
                 break;
             }
