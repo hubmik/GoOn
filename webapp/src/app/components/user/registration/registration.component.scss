@@ -1,0 +1,17 @@
+.center-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+form{
+  padding: 3%;
+  border-style: solid;
+  border-color: lightblue;
+}
+
+.form-group{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
