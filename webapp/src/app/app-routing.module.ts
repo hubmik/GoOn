@@ -3,15 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExploitationComponent } from './components/exploitation/exploitation.component';
-import { RegistrationComponent } from './components/user/registration/registration.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/user/registration', pathMatch: 'full'},
+  { path: '', redirectTo: 'account', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'user', component: UserComponent,
+  /*{ path: 'account', component: AccountComponent,
     children:[
-      {path: 'registration', component: RegistrationComponent}
-    ] },
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: LoginComponent }
+    ]},*/
   { path: 'exploitation', component: ExploitationComponent }
 ];
 

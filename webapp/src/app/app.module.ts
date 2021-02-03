@@ -9,8 +9,10 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ExploitationComponent } from './components/exploitation/exploitation.component';
-import { RegistrationComponent } from './components/user/registration/registration.component';
 import { UserService } from './services/user.service';
+import { AuthModule } from './auth/auth.module';
+import { RouterModule } from '@angular/router';
+import { AccountComponent } from './auth/components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,16 @@ import { UserService } from './services/user.service';
     HomeComponent,
     UserComponent,
     NavComponent,
-    ExploitationComponent,
-    RegistrationComponent
+    ExploitationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
