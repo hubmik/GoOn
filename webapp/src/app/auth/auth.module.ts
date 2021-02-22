@@ -7,12 +7,12 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './components/account/register/register.component';
 import { LoginComponent } from './components/account/login/login.component';
 import { AccountComponent } from './components/account/account.component';
-import { UserService } from '../services/user.service';
+import { RegistrationService } from './services/registration.service';
 
 
 @NgModule({
   declarations: [RegisterComponent, LoginComponent, AccountComponent],
-  providers: [UserService],
+  providers: [RegistrationService],
   imports: [
     CommonModule,
     AuthRoutingModule,
