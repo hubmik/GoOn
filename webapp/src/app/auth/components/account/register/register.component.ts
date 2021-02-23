@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { RegistrationService } from '../../../services/registration.service';
 
